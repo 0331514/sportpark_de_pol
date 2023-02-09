@@ -1,0 +1,44 @@
+body {
+  font-family: "Roboto";
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/images/football-pitch-g666ba5af5_1920.jpg');
+  background-color: #19191d;
+  font-weight:lighter;
+  font-size: smaller;
+}
+
+table {
+  width: 80%;
+  height: 100%;
+  border-collapse: collapse;
+  color: white;
+  margin-top: 2rem;
+  margin-left: 5rem;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid rgb(105, 105, 105);
+}
+
+td {
+  height: 40px;
+  background-color: #19191d;
+}
+
+th {
+  height: 45px;
+  background-color: #101012;
+}
+
+.integer, .string {
+  font-size: 20px;
+}
+
+tr.Own td:first-child {
+  border-left: solid 6px #1073B9;
+}
+
+tr td:nth-child(7) span {
+  font-weight: bold;
+}
