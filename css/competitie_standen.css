@@ -22,12 +22,13 @@ body {
   }
   
   td {
-    height: 55px;
+    height: 60px;
   }
 
   th {
-    background-color: #19191d;
-    height: 60px;
+    background-color: #111113;
+    ;
+    height: 65px;
   }
 
   .integer, .string {
