@@ -12,7 +12,7 @@ table {
   border-collapse: collapse;
   background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('/images/pitch-2.jpg');
   background-color: #000000;
-  color: white;
+  color: rgb(201, 201, 201);
   margin-top: 2rem;
 }
 
@@ -23,20 +23,21 @@ th, td {
 }
 
 td {
-  height: 60px;
+  height: 65px;
 }
 
 th {
-  height: 65px;
+  height: 70px;
 }
 
 .integer, .string {
   font-size: 20px;
 }
 
-tr.Own td:first-child {
-  border-left: solid 6px #1073B9;
+tr.Own {
+  border: solid 2px #1073B9;
 }
+
 
 tr td:nth-child(7) span {
   font-weight: bold;
