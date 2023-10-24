@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <style>
+    body, table {
+      font-family: "Roboto";
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/sportpark_de_pol/images/pitch-2.jpg');
+      background-color: #19191d;
+      font-weight: lighter;
+      font-size: smaller;
+    }
+    table {
+      width: 100%;
+      height: 100%;
+      border-collapse: collapse;
+      background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('/sportpark_de_pol/images/pitch-2.jpg');
+      background-color: #000;
+      color: #c9c9c9;
+      margin-top: 2rem;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #696969;
+    }
+    td {
+      height: 65px;
+    }
+    th {
+      height: 70px;
+    }
+    .integer, .string {
+      font-size: 20px;
+    }
+    tr.Own {
+      border: solid 2px #1073B9;
+    }
+    tr td:nth-child(7) span {
+      font-weight: bold;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://dexels.github.io/navajofeeds-json-parser/js/dist/feed-0.0.1.js"></script>
+  <script>feed.init({ clientId: "sksSKHoFDp" });</script>
+  <title>Leaderboard</title>
+</head>
+<body>
+  <div class="container table">
+    <div data-article="poulestand" data-param-poulecode="724576" data-param-gebruiklokaleteamgegevens="NEE"
+      data-label-gespeeldewedstrijden="G" data-label-gewonnen="W" data-label-gelijk="GL" data-label-verloren="V"
+      data-label-doelpuntenvoor="+" data-label-doelpuntentegen="-" data-label-doelsaldo="D" data-label-punten="P"
+      data-fields="positie,teamnaam,gespeeldewedstrijden,gewonnen,gelijk,verloren,punten,doelsaldo,doelpuntenvoor,doelpuntentegen">
+    </div>
+  </div>
+  <script>
+    function scrollPage() {
+      const scrollHeight = document.body.scrollHeight;
+      const duration = 2000;
+      const step = 10;
+      let currentPosition = 0;
+      function scrollStep() {
+        currentPosition += step;
+        window.scrollTo(0, currentPosition);
+        if (currentPosition < scrollHeight) {
+          requestAnimationFrame(scrollStep);
+        }
+      }
+      requestAnimationFrame(scrollStep);
+    }
+    setTimeout(scrollPage, 12000);
+  </script>
+</body>
+</html>
