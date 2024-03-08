@@ -45,33 +45,37 @@
   </style>
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://dexels.github.io/navajofeeds-json-parser/js/dist/feed-0.0.1.js"></script>
-  <script>
-    $(document).ready(function() {
-      feed.init({ clientId: "sksSKHoFDp" });
-
-      var data = feed.getDataSync();
-      var wedstrijdInfo = data.wedstrijdinformatie;
-      var kleedkamers = data.kleedkamers;
-
-      var html = "<table>";
-      html += "<tr><th>Tijd</th><th>Thuisteam</th><th>Uitteam</th><th>Kleedkamer Thuis</th><th>Kleedkamer Uit</th><th>Veld</th></tr>";
-
-      var tijd = wedstrijdInfo.aanvangstijdopgemaakt;
-      var thuisteam = wedstrijdInfo.uitteam.naam;
-      var uitteam = wedstrijdInfo.thuisteam.naam;
-      var kleedkamerThuis = kleedkamers.uit;
-      var kleedkamerUit = kleedkamers.thuis;
-      var veld = wedstrijdInfo.veldnaam;
-
-      html += "<tr><td>" + tijd + "</td><td>" + thuisteam + "</td><td>" + uitteam + "</td><td>" + kleedkamerThuis + "</td><td>" + kleedkamerUit + "</td><td>" + veld + "</td></tr>";
-
-      html += "</table>";
-
-      $('body').append(html);
-    });
-  </script>
+  <script>feed.init({ clientId: "sksSKHoFDp" });</script>
   <title>Kleedkamers</title>
 </head>
 <body>
+  <div class="container table">
+    <div 
+    data-article="programma"
+    data-param-gebruiklokaleteamgegevens="NEE"
+    data-param-aantaldagen="7"
+    data-param-eigenwedstrijden="JA"
+    data-param-thuis="JA"
+    data-param-uit="NEE"
+    data-fields="datum,thuisteam,uitteam,kleedkamerthuisteam,kleedkameruitteam,kleedkamerscheidsrechter,veld" 
+  ></div> 
+  </div>
+  <script>
+    function scrollPage() {
+      const scrollHeight = document.body.scrollHeight;
+      const duration = 2000;
+      const step = 10;
+      let currentPosition = 0;
+      function scrollStep() {
+        currentPosition += step;
+        window.scrollTo(0, currentPosition);
+        if (currentPosition < scrollHeight) {
+          requestAnimationFrame(scrollStep);
+        }
+      }
+      requestAnimationFrame(scrollStep);
+    }
+    setTimeout(scrollPage, 12000);
+  </script>
 </body>
 </html>
